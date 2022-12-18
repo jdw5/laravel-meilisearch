@@ -5,8 +5,8 @@ composer require laravel/scout
 ```console 
 php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"
 ```
-```
-console composer require meilisearch/meilisearch-php http-interop/http-factory-guzzle
+```console 
+composer require meilisearch/meilisearch-php http-interop/http-factory-guzzle
 ```
 - Copy into .env 
 ```console
@@ -20,13 +20,15 @@ MEILISEARCH_KEY=masterKey
 - On models to be indexed, apply the `use Searchable;` trait
 - Select the attributes to searched by adding a function inside the Model and within the Scout config file
     - In model:
-    ```public function toSearchableArray()
+    ```
+    public function toSearchableArray()
     {
         return [
             'title' => $this->title,
             'teaser' => $this->teaser,
         ];
-    }```
+    }
+    ```
     - In config/scout.php
         ```
         'meilisearch' => [
