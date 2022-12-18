@@ -14,7 +14,7 @@ return [
     | Supported: "algolia", "meilisearch", "database", "collection", "null"
     |
     */
-
+    
     'driver' => env('SCOUT_DRIVER', 'algolia'),
 
     /*
