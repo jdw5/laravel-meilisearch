@@ -6,6 +6,7 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
+import SearchBar from '@/Search/SearchBar.vue';
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -32,8 +33,12 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('search')" :active="route().current('search')">
+                                    Search
+                                </NavLink>
                             </div>
                         </div>
+                            <SearchBar />
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <!-- Settings Dropdown -->
@@ -145,6 +150,7 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Content -->
             <main>
+                {{ $page.props }}
                 <slot />
             </main>
         </div>

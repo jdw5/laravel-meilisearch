@@ -21,9 +21,12 @@
                     </form>
 
                     <div v-if="results" class="">
+                        <em>
+                            {{ results.total }} results found
+                        </em>
                         <div class="space-y-4 my-6">
-                            <template v-if="results.length > 0">
-                                <div v-for="result in results"
+                            <template v-if="results.data.length > 0">
+                                <div v-for="result in results.data"
                                     :key="result.id" 
                                     class=""
                                 >
@@ -41,7 +44,8 @@
                                 </p>
                             </template>
                         </div>
-
+                            <Link :href="results.prev_page_url">Prev</Link>
+                            <Link :href="results.next_page_url">Next</Link>
                     </div>
                 </div>
             </div>
@@ -52,12 +56,13 @@
 
 <script>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head, Link } from '@inertiajs/inertia-vue3';
 
 export default {
     components: {
         AuthenticatedLayout,
         Head,
+        Link,
     },
 
     props: {

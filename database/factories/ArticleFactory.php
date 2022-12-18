@@ -19,6 +19,8 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->sentence(5),
             'teaser' => $this->faker->sentence(20),
+            'user_id' => $this->faker->randomElement($array = [1, 2]),
+            'published' => $this->faker->boolean($chanceOfGettingTrue = 70)
         ];
     }
 }

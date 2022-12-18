@@ -11,10 +11,19 @@ class Article extends Model
     use HasFactory;
     use Searchable;
 
+    public function toSearchableArray()
+{
+    return [
+        'title' => $this->title,
+        'teaser' => $this->teaser,
+    ];
+}
+
 
     // Override the default Searchable method
     public function shouldBeSearchable()
     {
-        return $this->published == 1;
+        return $this->published == true;
+        // return true;
     }
 }
