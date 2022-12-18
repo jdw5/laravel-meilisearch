@@ -8,6 +8,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <!-- <form @submit.prevent="search" -->
                     <form action="/search" method="get"
                         class="space-y-2"
                     >
@@ -57,6 +58,7 @@
 <script>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import { Inertia } from '@inertiajs/inertia'
 
 export default {
     components: {
@@ -67,6 +69,14 @@ export default {
 
     props: {
         results: Array,
+    },
+
+
+    methods: {
+        search() {
+                
+
+        }
     }
     
 

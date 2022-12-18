@@ -38,7 +38,7 @@ const showingNavigationDropdown = ref(false);
                                 </NavLink>
                             </div>
                         </div>
-                            <SearchBar />
+                            <SearchBar class="pt-" />
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <!-- Settings Dropdown -->
@@ -150,7 +150,6 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Content -->
             <main>
-                {{ $page.props }}
                 <slot />
             </main>
         </div>
