@@ -15,6 +15,17 @@ MEILISEARCH_HOST=http://127.0.0.1:7700
 MEILISEARCH_KEY=masterKey
 ``` 
 
+## Artisan Commands for Scout
+- Import the models for indexing using:
+```console
+php artisan scout:import "App\Models\ModelName"
+```
+- Remove the models via
+```console
+php artisan scout:flush "App\Models\ModelName"
+```
+- Note that adding columns will be handled, however, flush if you are removing columns from a model
+
 
 ## Using Scout
 - On models to be indexed, apply the `use Searchable;` trait
